@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUNA PARK - Coliving Premium en Monterrey</title>
+    <meta name="description" content="Luna Park: Coliving premium en Monterrey diseñado por Arq. Fernando Donis. 264 residencias, arquitectura brutalista y comunidad en movimiento.">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ApartmentComplex",
+      "name": "LUNA PARK",
+      "description": "Coliving premium en Monterrey por Arq. Fernando Donis. 264 residencias diseñadas para una comunidad en movimiento. Arquitectura brutalista suavizada por la naturaleza.",
+      "url": "https://lunapark.pages.dev", 
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Monterrey",
+        "addressRegion": "Nuevo León",
+        "addressCountry": "MX"
+      },
+      "numberOfAccommodationUnits": "264",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Coworking",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Gimnasio",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Terraza",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Sala de Cine",
+          "value": true
+        }
+      ],
+      "image": [
+        "luna.png",
+        "luna2.jpg",
+        "cowork.jpg",
+        "gym.jpg",
+        "terraza.jpg",
+        "cine.jpg"
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo uppercase">
+            <div class="logo-icon"></div>
+            LUNA PARK
+        </div>
+        <nav class="uppercase">
+            <a href="#concepto">Concepto</a>
+            <a href="#amenidades">Amenidades</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="split-section">
+        <div class="half-image bg-light">
+             <img src="luna.png" alt="Fachada Luna Park" class="hero-image media-fill">
+        </div>
+        <div class="half-content bg-dark">
+            <h1 class="hero-title uppercase">
+                Encuentra<br>tu<br><span class="text-orange">gravedad</span>
+            </h1>
+            <div class="separator-white"></div>
+            <p class="section-desc">
+                Coliving premium en Monterrey por Arq. Fernando Donis. 264 residencias diseñadas para una comunidad en movimiento.
+            </p>
+        </div>
+    </section>
+
+    <section id="concepto" class="split-section hero-reverse">
+        <div class="half-content bg-dark">
+            <h1 class="hero-title uppercase" style="text-align: right;">
+                Tu vida<br>como<br>la<br><span class="text-orange">quieres</span>
+            </h1>
+            <div class="separator-white" style="margin-left: auto; width: 100%;"></div>
+            <p class="section-desc">
+                Luna Park es un sistema gravitacional diseñado para conectar. Arquitectura brutalista suavizada por la naturaleza, espacios que respiran.
+            </p>
+        </div>
+        <div class="half-image bg-light">
+             <img src="luna2.jpg" alt="Interior Luna Park" class="hero-image media-fill">
+        </div>
+    </section>
+
+    <section id="amenidades" class="gallery-section">
+        <h2 class="gallery-title uppercase">
+            Espacios que <span class="text-orange">orbitan</span>
+        </h2>
+        <div class="gallery-grid uppercase">
+            <div style="position: relative;"> <img src="cowork.jpg" alt="Coworking Luna Park" class="hero-image media-fill"></div>
+            <div style="position: relative;"> <img src="gym.jpg" alt="Gimnasio Luna Park" class="hero-image media-fill"></div>
+            <div style="position: relative;"> <img src="terraza.jpg" alt="Terraza Luna Park" class="hero-image media-fill"></div>
+            <div style="position: relative;"> <img src="cine.jpg" alt="Cine Luna Park" class="hero-image media-fill"></div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact-section">
+        <h2 class="contact-title uppercase">Únete a la órbita</h2>
+        <div class="contact-form-container">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="nombre" class="form-label uppercase">nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label uppercase">correo electrónico</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje" class="form-label uppercase">mensaje</label>
+                    <input type="text" id="mensaje" name="mensaje" class="form-input" required>
+                </div>
+                <button type="submit" class="btn-submit uppercase">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p class="uppercase">© 2026 LUNA PARK ALL RIGHTS RESERVED</p>
+    </footer>
+
+</body>
+</html>

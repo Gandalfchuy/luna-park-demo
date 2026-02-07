@@ -1,0 +1,150 @@
+/* VARIABLES */
+:root {
+    --bg-dark: #1a1a1a;
+    --bg-light: #dcdcdc;
+    --bg-form: #d1d1d1;
+    --accent-orange: #ff5a20;
+    --text-white: #ffffff;
+    --text-dark: #1a1a1a;
+    --btn-beige: #c5a896;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* UTILIDADES */
+.text-orange { color: var(--accent-orange); }
+.uppercase { text-transform: uppercase; }
+.separator-white { border-bottom: 1px solid rgba(255,255,255,0.3); margin: 30px 0; width: 100%; }
+.separator-dark { border-bottom: 1px solid rgba(0,0,0,0.3); margin: 30px 0; width: 100%; }
+
+
+/* --- CLASES PARA LOS MEDIOS (Imágenes y Placeholders) --- */
+
+/* Clase común para "bloquear" cualquier imagen o div dentro de su mitad */
+.media-fill {
+    position: absolute; /* CLAVE: Saca el elemento del flujo normal */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* CLAVE: Recorta la imagen si sobra espacio */
+    object-position: center; /* Centra el recorte */
+}
+
+/* Estilos específicos para el placeholder de texto */
+.img-placeholder {
+    background-color: #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-weight: bold;
+    letter-spacing: 2px;
+    /* Hereda las propiedades de .media-fill para llenar el espacio */
+}
+
+
+/* HEADER */
+header {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo { display: flex; align-items: center; font-weight: bold; letter-spacing: 1px; }
+.logo-icon { width: 20px; height: 20px; background-color: var(--bg-light); margin-right: 10px; }
+nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s ease; }
+nav a:hover { color: var(--accent-orange); }
+
+/* --- LAYOUT DE SECCIONES DIVIDIDAS (El núcleo de la solución) --- */
+.split-section {
+    display: flex;
+    width: 100%;
+    min-height: 90vh; /* Altura mínima en desktop */
+    /* 'stretch' asegura que la mitad de texto y la de imagen midan lo mismo de alto */
+    align-items: stretch; 
+}
+
+.half-content, .half-image {
+    flex: 0 0 50%; /* Fija el ancho al 50% exacto */
+    width: 50%;
+    position: relative; /* IMPORTANTE: Define el límite para los hijos absolutos */
+}
+
+.half-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    align-items: flex-start; 
+    text-align: left;
+}
+
+/* REGLA ESPECIAL: Sección de Concepto alineada a la derecha */
+#concepto .half-content {
+    align-items: flex-end;
+    text-align: right;
+}
+
+/* FONDOS */
+.bg-dark { background-color: var(--bg-dark); color: var(--text-white); }
+.bg-light { background-color: var(--bg-light); color: var(--text-dark); }
+
+/* TIPOGRAFÍA HERO */
+h1.hero-title { font-size: 5rem; line-height: 1.1; font-weight: 400; letter-spacing: 2px; }
+.section-desc { font-size: 1.1rem; line-height: 1.6; max-width: 500px; }
+
+/* GALERÍA */
+.gallery-section { background-color: var(--bg-dark); padding: 80px 40px; text-align: center; }
+.gallery-title { color: var(--text-white); font-size: 2.5rem; margin-bottom: 60px; font-weight: 400; letter-spacing: 2px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; min-height: 600px; }
+
+/* CONTACTO */
+.contact-section { background-color: var(--bg-light); padding: 100px 20px; display: flex; flex-direction: column; align-items: center; }
+.contact-title { font-size: 2.5rem; margin-bottom: 60px; font-weight: 400; letter-spacing: 2px; color: var(--text-dark); }
+.contact-form-container { background-color: var(--bg-form); padding: 60px 80px; width: 100%; max-width: 800px; }
+.form-group { margin-bottom: 40px; }
+.form-label { display: block; margin-bottom: 10px; font-size: 1rem; letter-spacing: 1px; color: var(--text-dark); text-align: left; }
+.form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--text-dark); padding: 10px 0; font-size: 1rem; outline: none; transition: border-color 0.3s; }
+.form-input:focus { border-bottom-color: var(--accent-orange); }
+.btn-submit { width: 100%; padding: 20px; background-color: var(--btn-beige); border: none; color: var(--text-white); font-size: 1.1rem; letter-spacing: 1px; cursor: pointer; transition: background-color 0.3s; }
+.btn-submit:hover { background-color: #b09483; }
+footer { background-color: var(--bg-dark); color: var(--text-white); padding: 30px 40px; font-size: 0.8rem; letter-spacing: 1px; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .split-section { flex-direction: column; min-height: auto; }
+    .hero-reverse { flex-direction: column-reverse; }
+    
+    .half-content, .half-image {
+        flex: auto; width: 100%;
+    }
+    
+    /* En móvil, damos una altura fija al contenedor de imagen */
+    .half-image {
+        height: 70vh;
+        min-height: 300px; /* Evita que sea muy pequeño en horizontales */
+    }
+
+    .half-content { padding: 60px 30px; align-items: flex-start !important; text-align: left !important; }
+    #concepto .half-content { align-items: flex-start; text-align: left; }
+    
+    h1.hero-title { font-size: 3.5rem; }
+    .section-desc { text-align: left; align-self: flex-start; }
+    .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 400px; min-height: auto; }
+    .contact-form-container { padding: 40px 30px; }
+    header { padding: 20px; }
+    nav a { margin-left: 15px; font-size: 0.8rem; }
+}
